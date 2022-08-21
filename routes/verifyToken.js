@@ -36,4 +36,5 @@ a};
   module.exports = {
     verifyToken,
     verifyTokenAndAuthorization,
+    verifyTokenAndAdmin,
   };

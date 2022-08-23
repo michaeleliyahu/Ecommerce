@@ -8,17 +8,25 @@ import Cart from "./pages/Cart";
 import {
   BrowserRouter as Router,
   Routes,
-  Route
+  Route,
+  Navigate
 } from "react-router-dom";
 const App = () => {
+  const user = true;
   return (
   <Router>
     <Routes>
       <Route path='/' element={<Home/>}/>
       <Route path="/products/:category" element={<ProductList/>}/>
-      <Route path="/products/:id" element={<Product/>}/>
+      <Route path="/products/:id" element={<Product/>}></Route>
       <Route path="/cart" element={<Cart/>}/>
-      <Route path="/login" element={<Login/>}/>
+      <Route path="/login" element=
+      {user ?
+        (<Navigate replace to={"/"}/>) 
+        : 
+        (<Login/>)
+      }
+      />
       <Route path="/register" element={<Register/>}/>
     </Routes>
   </Router>
